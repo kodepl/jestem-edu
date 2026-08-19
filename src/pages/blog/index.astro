@@ -1,0 +1,18 @@
+---
+import Scholar from "../../layouts/Scholar.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<Scholar title="Artykuły" description="Wszystkie artykuły Jestem Edu.">
+  <main class="mx-auto max-w-3xl px-5 pb-16">
+    <h1 class="font-serif text-3xl">Artykuły</h1>
+    <ul class="mt-8 space-y-5">
+      {posts.map((post) => (
+        <li>
+          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">{post.data.category}</p>
+          <a href={`/blog/${post.slug}`} class="font-serif text-lg hover:text-indigo-800">{post.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Scholar>

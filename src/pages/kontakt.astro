@@ -1,0 +1,17 @@
+---
+import Scholar from "../layouts/Scholar.astro";
+import site from "../site.config";
+---
+<Scholar title="Kontakt" description={`Napisz do redakcji ${site.name}.`}>
+  <section class="mx-auto max-w-xl px-5 pb-16">
+    <h1 class="font-serif text-3xl">Kontakt</h1>
+    <p class="mt-4">{site.address}</p>
+    <p class="mt-1"><a class="underline text-indigo-700" href={`mailto:${site.email}`}>{site.email}</a></p>
+    <p class="mt-4 text-sm text-slate-600">Odpowiadamy na merytoryczne pytania dotyczące edukacji i treści publikowanych na portalu. Czas odpowiedzi: do 48 h.</p>
+    <form class="mt-8 space-y-3" action={"mailto:" + site.email} method="get" enctype="text/plain">
+      <input name="subject" required placeholder="Temat" class="w-full rounded border border-slate-300 bg-white px-3 py-2" />
+      <textarea name="body" required rows={5} placeholder="Wiadomość" class="w-full rounded border border-slate-300 bg-white px-3 py-2"></textarea>
+      <button class="rounded bg-indigo-700 px-5 py-2 text-sm text-white hover:bg-indigo-800">Wyślij</button>
+    </form>
+  </section>
+</Scholar>
