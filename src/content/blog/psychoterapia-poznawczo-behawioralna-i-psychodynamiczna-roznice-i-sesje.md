@@ -56,7 +56,7 @@ Osoby z mniejszych miejscowości mogą czuć się zagubione w poszukiwaniach ter
 2. **Dostępność terapeutów**: Często w małych miastach można znaleźć specjalistów prowadzących różne formy terapii. Warto poszukać lokalnych psychologów lub terapeutów.
 3. **Opinie innych**: Rekomendacje znajomych lub pozytywne opinie w internecie mogą ułatwić wybór.
 
-Jeżeli potrzebujesz wsparcia, rozważ skontaktowanie się z profesjonalistą. W małym mieście można odnaleźć wartościową pomoc. Dobrą opcją może być [psycholog w Zawierciu](https://psychoterapeutazawiercie.pl/), który z pewnością pomoże w trudnych chwilach.
+Jeżeli potrzebujesz wsparcia, rozważ skontaktowanie się z profesjonalistą. W małym mieście można odnaleźć wartościową pomoc. Dobrą opcją może być [Psycholog Zawiercie](https://psychoterapeutazawiercie.pl/), który z pewnością pomoże w trudnych chwilach.
 
 ### 
 
