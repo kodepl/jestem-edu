@@ -19,6 +19,12 @@ const author = post.data.author ?? site.author;
 const bio = post.data.authorBio ?? site.authorBio;
 const cover = coverFor(post.data.category, post.data.image);
 const related = (await getCollection("blog")).filter((p) => p.slug !== post.slug && p.data.category === post.data.category).slice(0, 3);
+const pile = (await getCollection("blog")).sort((a, b) => +new Date(b.data.pubDate) - +new Date(a.data.pubDate));
+const here = pile.findIndex((p) => p.slug === post.slug);
+const newer = here > 0 ? pile[here - 1] : null;
+const older = here >= 0 && here < pile.length - 1 ? pile[here + 1] : null;
+const also = pile.filter((p) => p.slug !== post.slug).slice(0, 3);
+
 ---
 <Scholar title={post.data.title} description={post.data.description} image={cover}>
   <div class="mx-auto max-w-3xl px-5 pb-16">
@@ -53,4 +59,11 @@ const related = (await getCollection("blog")).filter((p) => p.slug !== post.slug
       </div>
     )}
   </div>
+
+<section class="mx-auto max-w-3xl px-5 pb-16">
+  <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+    {older && <a class="flex-1 rounded-full bg-amber-100 px-4 py-3 text-sm" href={"/blog/" + older.slug + "/"}>Wcześniejsza notatka<br />{older.data.title}</a>}
+    {newer && <a class="flex-1 rounded-full bg-amber-200 px-4 py-3 text-sm" href={"/blog/" + newer.slug + "/"}>Kolejna notatka<br />{newer.data.title}</a>}
+  </div>
+</section>
 </Scholar>
